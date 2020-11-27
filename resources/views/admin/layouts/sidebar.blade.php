@@ -15,7 +15,7 @@
         <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
         <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Добавить товар </a>
             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="#">Импортировать товары</a></li>
+                <li><a href="{{ url('admin/import_products') }}">Импортировать товары</a></li>
                 <li><a href="#">Page</a></li>
                 <li><a href="#">Page</a></li>
             </ul>
