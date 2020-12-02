@@ -15,7 +15,7 @@ class ImportProduct extends Model
 $path = resource_path('files/20-11-27-17-04-000.csv');
 $line = fopen($path,'r');
 $file = fgetcsv($line, 3000, ";");
-dd($file);
+//dd($file);
 
 
 

@@ -7,7 +7,7 @@
     <!--top-header-->
     <!--start-logo-->
     <div class="logo">
-        <a href="index.html"><h1>Luxury Watches</h1></a>
+        <a href="#"><h1>Luxury Watches</h1></a>
     </div>
     <!--start-logo-->
     <!--bottom-header-->
@@ -16,7 +16,7 @@
             <div class="header">
                 <div class="col-md-9 header-left">
                     <div class="top-nav">
-                        <ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
+                        <ul class="memenu skyblue"><li class="active"><a href="{{ url('/') }}">Home</a></li>
                             <li class="grid"><a href="#">Men</a>
                                 <div class="mepanel">
                                     <div class="row">
@@ -423,5 +423,18 @@
         </div>
     </div>
     <!--footer-end-->
+    <script>
+        // $(".popup").magnificPopup();
+        $(document).ready(function() {
+            $('.popup').magnificPopup({
+                items: {
+                    src: 'auth.login.#form_login',
+                    type:'inline',
+                },
+            });
+        });
+    </script>
+
+
 
 @endsection
