@@ -7,12 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Детский мир') }}</title>
 
     <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
 {{--    <script src="{{ asset('js/jquery-1.11.0.min.js')}}"></script>--}}
-{{--    <script src="{{ asset('js/jquery-2.2.4.min.js')}}"></script>--}}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery-2.2.4.min.js')}}"></script>
+{{--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>--}}
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--start-menu-->
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
