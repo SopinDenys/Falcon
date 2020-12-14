@@ -1,0 +1,8 @@
+.import_products{
+    margin-top: 20px;
+}
+.import_products p{
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}

@@ -15,15 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function (){
     Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.index');
-//    (new \App\Models\ImportProduct())->getImportProductsToDB();
+//    (new \App\Models\Admin\ImportProduct())->getImportProductsToDB();
 //    dd('done');
     Route::get('/import_products', [\App\Http\Controllers\Admin\ImportProductController::class, 'create']);
-    Route::post('/import_products', [\App\Http\Controllers\Admin\ImportProductController::class, 'store']);
+    Route::post('/import_products', [\App\Http\Controllers\Admin\ImportProductController::class, 'store'])->name('admin.import_products');
 });
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
+Route::get('/', [\App\Http\Controllers\Admin\ImportProductController::class, 'index']);
 Route::get('/checkout', function (){
    return view('checkout');
 });

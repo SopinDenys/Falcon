@@ -81,3 +81,15 @@
         </div>
     </nav>
 </header>
+<div class="page">
+
+    <div class="page-content d-flex align-items-stretch">
+        <!-- Side Navbar -->
+        @include('admin.layouts.sidebar')
+        <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                <div class="container-fluid">
+                    <h2 class="no-margin-bottom">Dashboard</h2>
+                </div>
+            </header>

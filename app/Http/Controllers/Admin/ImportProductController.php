@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ImportProduct;
+use App\Jobs\Admin\CsvImporter;
+use App\Models\Admin\ImportProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImportProductController extends Controller
 {
@@ -15,7 +17,9 @@ class ImportProductController extends Controller
      */
     public function index()
     {
-        //
+        $product = ImportProduct::orderBy('id', 'desc')->get();
+
+        return view('index', compact('product'));
     }
 
     /**
@@ -47,15 +51,28 @@ class ImportProductController extends Controller
         $parts = (array_chunk($data, 5000));
 
         foreach ($parts as $index => $part){
-            $fileName = resource_path('files/' . date('y-m-d-H-i-s') . $index . '.csv');
+            $fileName = resource_path('files/' . date('H-i-d-m-Y') . $index . '.csv');
 
             file_put_contents($fileName, $part);
         }
 
-        session()->flash('status', 'Файл добавлен');
+        session()->flash('status', 'Все прошло успешно, файл добавлен!');
 
-        return redirect('admin/import_products');
+        return redirect()->route('admin.import_products');
+//        return redirect('admin/import_products');
 
+    }
+
+    private $objIm;
+    public function __construct()
+    {
+//        $path = resource_path('files\*.csv');
+//        $global = glob($path);
+        $path = resource_path('files\20-12-12-23-12-010.csv');
+        $this->objIm = new CsvImporter($path, false, ';');
+        $result = $this->objIm->getImporter();
+        $db = new ImportProduct();
+        $db->store($result);
     }
 
     /**

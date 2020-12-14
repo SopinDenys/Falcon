@@ -1,18 +1,7 @@
 @extends('admin.layouts.appAdmin')
 
 @section('admin_content')
-<div class="page">
 
-    <div class="page-content d-flex align-items-stretch">
-        <!-- Side Navbar -->
-        @include('admin.layouts.sidebar')
-        <div class="content-inner">
-            <!-- Page Header-->
-            <header class="page-header">
-                <div class="container-fluid">
-                    <h2 class="no-margin-bottom">Dashboard</h2>
-                </div>
-            </header>
             <!-- Dashboard Counts Section-->
             <section class="dashboard-counts no-padding-bottom">
                 <div class="container-fluid">
@@ -364,7 +353,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Updates Section                                                -->
+            <!-- Updates Section  -->
             <section class="updates no-padding-top">
                 <div class="container-fluid">
                     <div class="row">
@@ -551,9 +540,7 @@
             </section>
             <!-- Page Footer-->
             @include('admin.layouts.footer')
-        </div>
-    </div>
-</div>
+
 
 
 @endsection

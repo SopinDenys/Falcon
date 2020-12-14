@@ -30,7 +30,7 @@
     <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
     <link href="{{ asset('css/memenu.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -41,6 +41,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('layouts.footer')
     </div>
 
 </body>
